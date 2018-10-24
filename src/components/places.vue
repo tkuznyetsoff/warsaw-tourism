@@ -9,7 +9,7 @@
 					@click="onZoomPlace(place)"
 				>
 					{{place.name}}
-					<button class="places-list__item-remove" @click.stop="removePlace">X</button>
+					<button class="places-list__item-remove" @click.stop="removePlace(place)">X</button>
 				</li>
 			</ul>
 			<p v-if="!places.length" class="places-list__info--empty">Click on the map to save a place.</p>
@@ -22,12 +22,6 @@
 import { mapGetters } from 'vuex';
 
 export default {
-	data () {
-		return {
-
-		}
-	},
-
 	computed: {
 		...mapGetters('places', ['places'])
 	},

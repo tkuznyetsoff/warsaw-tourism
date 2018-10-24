@@ -10,7 +10,7 @@
 		</gmap-map>
 		<div class="popup" v-if="popupVisible" :style="popupStyle">
 			<form class="popup-form" @submit.prevent="submit">
-				<input ref="popupinput" type="text" class="popup__input" placeholder="Name" v-model="popupName" />
+				<input ref="popupinput" type="text" class="popup__input" placeholder="Name" v-model="popupInput" />
 				<input type="button" class="popup__button" value="Save" @click="submit" />
 			</form>
 		</div>
@@ -29,7 +29,7 @@ export default {
 				left: 0
 			},
 			popupVisible: false,
-			popupName: ''
+			popupInput: ''
 		}
 	},
 
@@ -49,39 +49,33 @@ export default {
 
 	methods: {
 		showPopup ({ latLng, pixel }) {
-			this.$data.popupName = '';
+			this.popupInput = '';
 			setTimeout(() => {
 				this.$refs.popupinput.focus()
 			}, 0);
 
-			this.$data.popupStyle = {
+			this.popupStyle = {
 				top: `${pixel.y}px`,
 				left: `${pixel.x}px`
 			};
 
-			this.$data.latLng = latLng;
+			this.latLng = latLng;
 
-			this.$data.popupVisible = true;
+			this.popupVisible = true;
 		},
 
 		hidePopup () {
-			this.$data.popupVisible = false;
+			this.popupVisible = false;
 		},
 
 		submit () {
 			this.hidePopup();
 			this.$store.dispatch('places/addPlace', {
-				lat: this.$data.latLng.lat(),
-				lng: this.$data.latLng.lng(),
-				name: this.$data.popupName
+				lat: this.latLng.lat(),
+				lng: this.latLng.lng(),
+				name: this.popupInput
 			})
 		}
-	},
-
-	// watch () {
-	// 	zoomedPlace () {
-	//
-	// 	}
-	// }
+	}
 }
 </script>
