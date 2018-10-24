@@ -1,0 +1,12 @@
+.gmap {
+	position: fixed;
+	top: $titleHeight * 2 + $filterHeight;
+	right: 0;
+	bottom: 0;
+	width: 50%;
+	overflow-y: auto;
+}
+
+.vue-map-container {
+	height: 100%;
+}

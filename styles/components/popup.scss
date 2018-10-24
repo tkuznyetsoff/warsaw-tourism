@@ -1,0 +1,37 @@
+.popup {
+	position: absolute;
+	background: #00000040;
+	transform: translate(-50%, -150%);
+
+	&-form {
+		display: flex;
+
+		&:after {
+			content: '';
+			border-left: 10px solid transparent;
+			border-right: 10px solid transparent;
+			border-top: 10px solid grey;
+			position: absolute;
+			bottom: -10px;
+			left: 50%;
+			transform: translate(-50%);
+		}
+	}
+
+	&__input {
+		font-size: 1.2em;
+		padding: 0.2em 0.4em;
+		box-sizing: border-box;
+		border: 1px solid grey;
+		width: 10em;
+	}
+
+	&__button {
+		border: 1px solid grey;
+		background: #ffffff;
+		margin: 0;
+		font-size: 1.2em;
+		padding: 0.25em;
+		cursor: pointer;
+	}
+}

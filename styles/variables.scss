@@ -1,0 +1,19 @@
+$titleHeight: 3em;
+$filterHeight: 4em;
+
+@mixin input {
+	font-size: 1.2em;
+	padding: 0.2em 0.4em;
+}
+
+@mixin actionBtn {
+	padding: 1em 1.2em;
+	margin-top: -1em;
+	background: #fff;
+	border: 1px solid;
+
+	&:hover {
+		cursor: pointer;
+		background: #E3F2FD;
+	}
+}

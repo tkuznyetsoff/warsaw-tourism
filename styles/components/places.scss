@@ -1,0 +1,58 @@
+.places {
+	position: fixed;
+	top: $titleHeight * 2 + $filterHeight;
+	left: 0;
+	bottom: 0;
+	width: 50%;
+	overflow-y: auto;
+
+	.wrapper {
+		margin: 0 1em 1em;
+	}
+
+	&-search__input {
+		width: 100%;
+		box-sizing: border-box;
+		@include input;
+	}
+
+	&-list {
+		padding: 0;
+		margin: 0;
+
+		&__item {
+			background-color: #fff;
+			margin: 1em 0;
+			padding: 2em;
+			list-style: none;
+			border-radius: 3px;
+			cursor: pointer;
+
+			&:first-child {
+				margin-top: 0;
+			}
+
+			&:hover {
+				background-color: #455a642e;
+			}
+
+			&-remove {
+				float: right;
+
+				@include actionBtn;
+			}
+		}
+
+		&__info {
+			&--empty {
+				text-align: center;
+				margin: 10em 5em 0;
+				padding: 3em;
+				border: solid #c5c5c5;
+				border-width: 1px 0 1px 0;
+			}
+		}
+	}
+}
+
+
